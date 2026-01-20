@@ -1,0 +1,866 @@
+/* ===============================
+   RESET
+================================ */
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'mallanna', sans-serif;
+}
+
+body.Signin, body.Signup {
+    font-family: "Mallanna", sans-serif; 
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #E2F4FF 0%, #69C6FF 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px; /* เพิ่มพื้นที่ด้านบนให้โลโก้ */
+}
+
+/* ===============================
+   LOGO SECTION
+================================ */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+    /* width: 250px;  ปรับขนาดได้ตามความเหมาะสม */
+}
+
+/* ===============================
+   FORM & TEXT
+================================ */
+.text_Signin, .text_Signup {
+    width: 100%;
+    max-width: 350px;
+}
+
+.text_Signin h3, .text_Signup h3 {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* ===============================
+   INPUT FIELDS
+================================ */
+.input_Signin, .input_Signup {
+    width: 100%;
+    max-width: 320px;
+    margin: 12px auto;
+}
+
+.input_Signin input, .input_Signup input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+    border-radius: 12px; /* ขอบมนขึ้นให้ดูเป็นมิตร */
+    border: 1px solid #ddd;
+    outline: none;
+    background-color: white; /* เปลี่ยนเป็นสีขาวล้วนให้ดูสะอาดตา */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+.input_Signin input:focus, .input_Signup input:focus {
+    border-color: #7EBEFB;
+    box-shadow: 0 0 8px rgba(126, 190, 251, 0.3);
+}
+
+/* ===============================
+   MAIN BUTTONS
+================================ */
+.button_Signin, .button_Signup {
+    width: 100%;
+    max-width: 320px;
+    margin: 25px auto 15px;
+}
+
+.button_Signin button, .button_Signup button {
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.button_Signin button:hover, .button_Signup button:hover {
+    background-color: #005fc2;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* ===============================
+   DIVIDER (Sign up with)
+================================ */
+.divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 20px auto;
+    color: #777;
+    font-size: 14px;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+/* ===============================
+   SOCIAL ICON BUTTONS
+================================ */
+.icon_Signin, .icon_Signup {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icon_Signin button, .icon_Signup button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 55px; /* ปรับเป็นวงกลมหรือสี่เหลี่ยมจตุรัส */
+    height: 50px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.icon_Signin button:hover, .icon_Signup button:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   LAST TEXT (Link)
+================================ */
+.lasttext {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #555;
+}
+
+.lasttext a {
+    font-size: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.lasttext a:hover {
+    text-decoration: underline;
+}
+/* ===============================
+   HOME PAGE
+================================ */
+body.Homepage {
+    font-family: 'Mallanna', sans-serif;
+    /* ไล่เฉดสีพื้นหลังจากฟ้าอ่อนไปฟ้าเข้ม */
+    background: linear-gradient(180deg, #E6F4FF 0%, #7EBEFB 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- Header Section --- */
+.header {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px; /* ปรับขนาดโลโก้มือ */
+    height: auto;
+}
+
+.brand-name {
+    font-size: 24px;
+    color: #555;
+    font-weight: 300;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-settings {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+}
+
+.btn-login {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: #666;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- Main Card Section --- */
+.main-card {
+    background: white;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 350px;
+    border-radius: 50px; /* ขอบมนมากตามภาพ */
+    padding: 60px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.main-card h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.main-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* --- Action Buttons Section --- */
+.action-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.action-btn {
+    background: white;
+    border: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.action-btn:hover {
+    transform: translateY(-5px);
+}
+
+.action-btn i {
+    font-size: 45px;
+    color: #8ECAFF; /* สีฟ้าอ่อนตามไอคอน */
+    margin-bottom: 10px;
+}
+
+.action-btn span {
+    font-size: 18px;
+    color: #777;
+    font-weight: 400;
+}
+/* ===============================
+   CAMERA PAGE
+================================ */
+body {
+    background-color: #D6EFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ส่วนหัวและปุ่มวงกลม */
+.header-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px; /* ลด padding ลงหน่อยเพื่อไม่ให้บีบปุ่มเข้ากลางมากไป */
+}
+
+/* ตั้งค่าให้ปุ่มทางขวาเรียงแนวนอนเสมอ */
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* สไตล์ของโลโก้ฝั่งซ้าย */
+.header-left .logo-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #555; /* สีเทาเข้มตามรูป */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* ระยะห่างระหว่างไอคอนมือกับตัวอักษร Verse */
+}
+
+.btn-circle {
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* การ์ดสีขาวหลัก */
+.background-pad {
+    background: white;
+    border-radius: 35px;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ปุ่มเลือกภาษา */
+.language-bar-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.voicepage-box {
+    background: white;
+    border: 1px solid #DDD;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* แถบนำทางด้านล่าง */
+.bottom-nav {
+    display: flex;
+    justify-content: flex-end; /* จัดชิดขวาตามภาพ Screenshot (65) */
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding-right: 10px;
+}
+
+.nav-item {
+    background: white;
+    border: 1px solid #ccc; /* เส้นขอบบางๆ */
+    width: 65px;  /* ขยายความกว้างเพื่อให้มีพื้นที่สำหรับข้อความ */
+    height: 65px; /* ปรับความสูงให้เป็นสี่เหลี่ยมจัตุรัส */
+    border-radius: 15px; /* มุมมนทรงสี่เหลี่ยม */
+    color: #555;
+    display: flex;
+    flex-direction: column; /* จัดไอคอนไว้บน ข้อความไว้ล่าง */
+    justify-content: center;
+    align-items: center;
+    gap: 4px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* สไตล์ไอคอน */
+.nav-item i {
+    font-size: 20px;
+}
+
+/* สไตล์ตัวอักษร T ในหน้า Type */
+.icon-text {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: serif; /* หรือใช้ font ที่มีหัวขีดตามภาพ */
+}
+
+/* สไตล์ข้อความใต้ไอคอน */
+.nav-item span {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* สถานะปุ่มที่ถูกเลือก (Type) */
+.nav-item.active {
+    background: #8ECAFF; /* สีฟ้าสว่าง */
+    color: white;
+    border-color: #8ECAFF;
+}
+
+.nav-item.active .icon-text {
+    color: white;
+}
+
+/* เงาแบบลอยตัว */
+.shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   2. CAMERA PAGE SPECIFIC (เฉพาะหน้ากล้อง)
+   ========================================= */
+   /* สไตล์รวมของทุกมุม */
+.CameraPage .corner {
+    position: absolute;
+    width: 30px;  /* ความยาวของเส้นขีด */
+    height: 30px; /* ความสูงของเส้นขีด */
+    border: 3px solid #333; /* ความหนาและสีของเส้นขีด */
+}
+
+/* ปรับแต่งแต่ละมุม โดยการซ่อนเส้นขอบด้านที่ไม่ต้องการเพื่อให้เป็นรูปมุม */
+.CameraPage .top-left {
+    top: 20px;
+    left: 20px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.CameraPage .top-right {
+    top: 20px;
+    right: 20px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.CameraPage .bottom-left {
+    bottom: 20px;
+    left: 20px;
+    border-right: none;
+    border-top: none;
+}
+
+.CameraPage .bottom-right {
+    bottom: 20px;
+    right: 20px;
+    border-left: none;
+    border-top: none;
+}
+.CameraPage .camera-view {
+    width: 100%;
+    height: 320px;
+    border: 1px solid #C0D6E4;
+    border-radius: 25px;
+    position: relative;
+}
+
+.CameraPage .language-bar-wrapper {
+    top: 325px; /* ตำแหน่งลอยด้านล่างกรอบกล้อง */
+}
+
+.CameraPage .input-container {
+    margin-top: 15px;
+    background: #FFFFFF;
+    border: 1px solid #BEE3FF;
+    border-radius: 30px;
+    padding: 30px 15px; /* หนาพิเศษสำหรับหน้ากล้อง */
+    box-shadow: 0 0 15px 2px rgba(142, 202, 255, 0.5);
+}
+
+/* =========================================
+   3. TEXT PAGE SPECIFIC (เฉพาะหน้าพิมพ์)
+   ========================================= */
+.logo-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Main Card --- */
+.TextPage .background-pad {
+    height: 420px;
+    padding: 20px; /* เพิ่มพื้นที่ภายในการ์ด */
+    border-radius: 40px; /* มนขึ้นตามรูป */
+}
+
+.TextPage .display-view {
+    flex: 1;
+    border: 1px solid #C0D6E4;
+    border-radius: 30px;
+    position: relative;
+    background-color: #fcfdfe; /* ขาวนวลๆ */
+}
+
+/* --- Typing Area --- */
+.text-input-area {
+    margin-top: 25px; /* ระยะห่างระหว่างกล่องบนกับช่องพิมพ์ */
+}
+
+.TextPage .input-container {
+    background: white;
+    border: 1px solid #BEE3FF;
+    border-radius: 30px; /* มนเท่ากับกล่องด้านบน */
+    padding: 6px 10px 6px 20px; /* ปรับความสูงให้ดูเพรียว */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(142, 202, 255, 0.2);
+}
+
+.TextPage .input-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    color: #333;
+    font-size: 15px;
+    background: transparent;
+}
+
+/* --- Actions (Mic & Send Button) --- */
+.TextPage .input-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* ระยะห่างระหว่างไมค์และปุ่มส่ง */
+}
+
+.TextPage .btn-voice {
+    color: #666;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.TextPage .btn-send {
+    background: #E6F4FF; /* สีฟ้าอ่อนตามรูป */
+    border: 1px solid #BEE3FF;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    color: #8ECAFF; /* สีไอคอนลูกศร */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.TextPage .btn-send:hover {
+    background: #8ECAFF;
+    color: white;
+}
+
+/* --- Bottom Nav --- */
+.bottom-nav {
+    margin-top: 20px;
+    gap: 25px;
+}
+
+.nav-item.active {
+    background: #8ECAFF;
+    box-shadow: 0 4px 15px rgba(142, 202, 255, 0.5);
+}
+.text-action-icons {
+    margin: 5px 30px 0 30px;
+}
+.text-action-icons i {
+    font-size: 16px;
+    color: #525252;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* ===============================
+   VOICE PAGE SPECIFIC (เฉพาะหน้าเสียง)
+================================ */
+body.VoicePage {
+    background-color: #D6EFFF; /* พื้นหลังฟ้าอ่อน */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* --- Header --- */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-circle {
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* --- Main White Card --- */
+.background-pad {
+    background: white;
+    border-radius: 35px;
+    padding: 20px;
+    position: relative;
+    height: 400px; /* ปรับความสูงตามรูป */
+    display: flex;
+    flex-direction: column;
+}
+
+/* กรอบเส้นด้านใน (Inner Border) */
+.display-view {
+    flex: 1;
+    border: 1px solid #C0D6E4; /* สีเส้นขอบเทาฟ้า */
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 50px; /* เว้นที่ด้านล่างให้ปุ่มไมค์ */
+}
+
+/* ปุ่มเลือกภาษา (Thai) */
+.language-bar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.voicepage-box {
+    background: white;
+    border: 1px solid #DDD;
+    padding: 4px 18px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* --- ปุ่มไมโครโฟนกึ่งกลางด้านล่าง --- */
+.voice-center-btn {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mic-main-btn {
+    background: white;
+    border: 1px solid #BEE3FF;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #666;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(142, 202, 255, 0.4); /* เงาฟ้าฟุ้ง */
+}
+
+/* เงาต่างๆ */
+.shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.shadow-sm { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+
+/* =========================================
+   GAME PAGE SPECIFIC
+   ========================================= */
+
+body.GamePage {
+    background-color: #D6EFFF;
+}
+
+/* กล่องแสดงผลสีฟ้า */
+.game-display-card {
+    background-color: #A9DFFF; /* สีฟ้าสว่างกว่าพื้นหลังเล็กน้อย */
+    width: 100%;
+    height: 280px;
+    border-radius: 35px;
+    border: 1px solid #92C9EB;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* การจัดตำแหน่งไอคอน */
+.action-icons-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.action-icons-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+/* สไตล์ปุ่มพื้นฐาน */
+.action-icons-left button, 
+.action-icons-right button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    /* สร้างขอบสีขาวหนาๆ ล้อมรอบไอคอน */
+    border: 3px solid white;
+}
+
+/* ปุ่มสีส้ม (Thinking) */
+.icon-think {
+    background-color: #FF7A00; /* สีส้ม */
+    color: white;
+}
+
+/* ปุ่มสีม่วง (Play) */
+.icon-play {
+    background-color: #B000FF; /* สีม่วงสด */
+    color: white;
+    padding-left: 3px; /* ขยับไอคอน play ให้ดูอยู่กึ่งกลาง */
+}
+
+/* ถ้าต้องการให้ดาวมีขอบสีเหลืองแบบในรูป Screenshot (66) ให้ใช้แบบนี้แทน: */
+.icon-star {
+    background-color: #FFEB00; /* พื้นหลังขาว */
+    color: #ffffff;          /* ดาวสีเหลือง */
+    border: 3px solid #ffffff !important; /* ขอบสีเหลือง */
+}
+
+.picture-card {
+    display: flex;
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    align-items: center;     /* จัดกึ่งกลางแนวตั้ง */
+    width: 100%;             /* หรือกำหนดขนาดตามกรอบของคุณ */
+    height: 100%;            /* ให้สูงเต็มกรอบฟ้า */
+    overflow: hidden;        /* ป้องกันรูปล้นกรอบ */
+}
+
+/* ตัวรูปภาพ */
+.picture-card img {
+    width: 70%;              /* ขนาดตามที่คุณต้องการ */
+    height: auto;
+    border-radius: 20px;
+    display: block;          /* ป้องกันช่องว่างใต้ภาพ */
+}
+
+/* จัดวางการ์ดคำศัพท์ 4 ใบ */
+.word-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.word-card {
+    background: white;
+    flex: 1;
+    padding: 20px 5px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+}
+
+/* ปุ่มควบคุมด้านล่าง */
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.control-btn {
+    background: #43a7ff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.control-btn:active {
+    transform: scale(0.9);
+}
+
+/* คลาสสำหรับเงา */
+.shadow { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.shadow-sm { box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
